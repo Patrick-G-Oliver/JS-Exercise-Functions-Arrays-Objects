@@ -126,10 +126,13 @@ console.log(makePersonObject(1, 'Major Tom', 'major@tom.com'));
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(/* code here */) {
-  /* code here */
+function getName(object) {
+  return 'Hello, my name is ' + object.name;
 }
 
+let majorTom = makePersonObject(1, 'Major Tom', 'major@tom.com');
+
+console.log(getName(majorTom));
 
 /**
  * ### Challenge `appleIndex`
@@ -146,9 +149,15 @@ function getName(/* code here */) {
  * passing in [ 'orange', 'grape', 'apple', 'banana', 'mango' ] as the argument,
  * the returned value should be: 2.
 */
-function appleIndex(/* code here */) {
-  /* code here */
+function appleIndex(arrayOfStrings) {
+  for (i = 0; i < arrayOfStrings.length; i++) {
+    if (arrayOfStrings[i] === 'apple') {
+      return i;
+    }
+  }
 }
+let fruitArray = ['orange', 'mango', 'apple'];
+console.log(appleIndex(fruitArray));
 
 /**
  * ### Challenge `isItAnApple`

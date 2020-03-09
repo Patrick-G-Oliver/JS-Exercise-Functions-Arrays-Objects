@@ -174,9 +174,19 @@ console.log(appleIndex(fruitArray));
  * passing in [ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ] as the argument,
  * the returned value should be: [ false, true, false, false, true, false ].
 */
-function isItAnApple(/* code here */) {
-  /* code here */
+function isItAnApple(stringsArray) {
+  let newArray = [];
+  for (i = 0; i < stringsArray.length; i++) {
+    if (stringsArray[i] === 'apple') {
+      newArray.push(true); 
+    } else {
+      newArray.push(false);
+    }
+  }
+  return newArray;
 }
+let trueAppleArray = ['apple', 'grape', 'kiwi', 'apple'];
+console.log(isItAnApple(trueAppleArray));
 
 
 

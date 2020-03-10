@@ -281,12 +281,19 @@ console.log(getLastCarInfo(moreCarsArray));
 */
 function getModelYears(automotiveArray) {
   let modelYears = [];
-  for (i = 0; i < automotiveArray.length; i++) {
+
+  for (automotiveArray[i] in automotiveArray) {
+    
+    Object.values(automotiveArray[i]);
+  }
+
+  /* for (i = 0; i < automotiveArray.length; i++) {
+    let carYear = automotiveArray[i].car_year;
     for (automotiveArray[i].car_year in automotiveArray) {
-      modelYears.push(automotiveArray[i].car_year);
+      modelYears.push(carYear);
     }
   }
-  return modelYears;
+  return modelYears; */
 }
 
 let anotherCarsArray = [ { car_make: "Dodge", car_model: 'Dart', car_year: 1971 }, { car_make: 'Buick', car_model: 'Skylark', car_year: 1972 }, { car_make: 'Ford', car_model: 'Fiesta', car_year: 1993 } ];

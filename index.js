@@ -188,8 +188,6 @@ function isItAnApple(stringsArray) {
 let trueAppleArray = ['apple', 'grape', 'kiwi', 'apple'];
 console.log(isItAnApple(trueAppleArray));
 
-
-
 /*
 // ⭐️ Example Test Data ⭐️
 
@@ -243,8 +241,13 @@ function get3rdCar(inventory) {
  * it will return `This is a Lincoln Navigator`.
 */
 function getCarInfoByIndex(inventory, index) {
-  /* code here */
+  let carIndex = inventory[index];
+  return `This is a ${carIndex.car_make} ${carIndex.car_model}`;
 }
+
+let carsArray = [ { car_make: 'Chevy', car_model: 'Astro' }, { car_make: 'Chevy', car_model: 'Spark' }];
+
+console.log(getCarInfoByIndex(carsArray, 1));
 
 /**
  * ### Challenge `getLastCarInfo`
@@ -257,9 +260,15 @@ function getCarInfoByIndex(inventory, index) {
  * For example, if getLastCarInfo is invoked passing the inventory inside /data/inventory.js,
  * it will return `This is a Lincoln Town Car`.
 */
-function getLastCarInfo(/* code here */) {
-  /* code here */
+function getLastCarInfo(inventoryArray) {
+  let lastCarIndex = inventoryArray.length - 1;
+  let lastCarInfo = inventoryArray[lastCarIndex];
+  return `This is a ${lastCarInfo.car_make} ${lastCarInfo.car_model}`;
 }
+
+let moreCarsArray = [ { car_make: "Dodge", car_model: 'Dart' }, { car_make: 'Buick', car_model: 'Skylark' }, { car_make: 'Ford', car_model: 'Fiesta' } ];
+
+console.log(getLastCarInfo(moreCarsArray));
 
 /**
  * ### Challenge `getModelYears`
@@ -270,9 +279,19 @@ function getLastCarInfo(/* code here */) {
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * getModelYears returns an array containing all the 'car_year's in the inventory.
 */
-function getModelYears(/* code here */) {
-  /* code here */
+function getModelYears(automotiveArray) {
+  let modelYears = [];
+  for (i = 0; i < automotiveArray.length; i++) {
+    for (automotiveArray[i].car_year in automotiveArray) {
+      modelYears.push(automotiveArray[i].car_year);
+    }
+  }
+  return modelYears;
 }
+
+let anotherCarsArray = [ { car_make: "Dodge", car_model: 'Dart', car_year: 1971 }, { car_make: 'Buick', car_model: 'Skylark', car_year: 1972 }, { car_make: 'Ford', car_model: 'Fiesta', car_year: 1993 } ];
+
+console.log(getModelYears(anotherCarsArray));
 
 /**
  * ### Challenge `getCarInfoById`

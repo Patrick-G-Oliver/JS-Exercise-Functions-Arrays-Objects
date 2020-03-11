@@ -284,7 +284,7 @@ function getModelYears(automotiveArray) {
 
   for (i = 0; i < automotiveArray.length; i++) {
     let carYear = automotiveArray[i];
-      modelYears.push(carYear.name);
+      modelYears.push(carYear.car_year);
   }
   return modelYears;
 }
